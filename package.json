@@ -1,7 +1,7 @@
 {
-  "name": "design-system-demo",
+  "name": "kunxi-design-system-demo",
   "version": "0.1.0",
-  "private": true,
+  "private": false,
   "dependencies": {
     "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^9.3.2",
@@ -13,12 +13,17 @@
   },
   "scripts": {
     "start": "react-scripts start",
-    "build": "react-scripts build",
+    "build": "cross-env BABEL_ENV=production babel src -d dist",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "storybook": "start-storybook -p 9009 -s public",
     "build-storybook": "build-storybook -s public",
     "chromatic": "CHROMATIC_APP_CODE=1u2emhxvvey chromatic"
+  },
+  "babel": {
+    "presets": [
+      "react-app"
+    ]
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -36,13 +41,23 @@
     ]
   },
   "devDependencies": {
+    "@babel/cli": "^7.8.4",
+    "@storybook/addon-a11y": "^5.3.18",
     "@storybook/addon-actions": "^5.3.17",
+    "@storybook/addon-docs": "^5.3.18",
     "@storybook/addon-knobs": "^5.3.17",
     "@storybook/addon-links": "^5.3.17",
     "@storybook/addon-storysource": "^5.3.17",
     "@storybook/addons": "^5.3.17",
     "@storybook/preset-create-react-app": "^2.1.1",
     "@storybook/react": "^5.3.17",
+    "auto": "^9.25.0",
+    "cross-env": "^7.0.2",
     "storybook-chromatic": "^3.5.2"
-  }
+  },
+  "description": "design system deom by kunxi",
+  "main": "dist/index",
+  "repository": "git@github.com:XiKun-TW/kunxi-design-system-demo.git",
+  "author": "Gougougogogo <394442302@qq.com>",
+  "license": "MIT"
 }
